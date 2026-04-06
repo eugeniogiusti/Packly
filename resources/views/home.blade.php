@@ -3,218 +3,338 @@
 @section('main-content')
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">{{ __('Dashboard') }}</h1>
-
-    @if (session('success'))
-    <div class="alert alert-success border-left-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+            <i class="fas fa-plus fa-sm text-white-50 mr-1"></i> Nuovo Viaggio
+        </a>
     </div>
-    @endif
 
-    @if (session('status'))
-        <div class="alert alert-success border-left-success" role="alert">
-            {{ session('status') }}
-        </div>
-    @endif
-
+    <!-- Stats Cards -->
     <div class="row">
 
-        <!-- Earnings (Monthly) Card Example -->
+        <!-- Viaggi totali -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings (Monthly)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Viaggi Totali</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            <i class="fas fa-suitcase fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Earnings (Monthly) Card Example -->
+        <!-- Prossimo viaggio -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings (Annual)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Prossimo Viaggio</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">Barcellona</div>
+                            <div class="text-xs text-gray-500">15 Apr 2026</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            <i class="fas fa-plane fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Earnings (Monthly) Card Example -->
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
-                            <div class="row no-gutters align-items-center">
-                                <div class="col-auto">
-                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
-                                </div>
-                                <div class="col">
-                                    <div class="progress progress-sm mr-2">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Users -->
+        <!-- Item da spuntare -->
         <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">{{ __('Users') }}</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $widget['users'] }}</div>
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Item da Fare</div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">7 / 24</div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 29%" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                            <i class="fas fa-check-square fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Template salvati -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Template Salvati</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-layer-group fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div class="row">
 
-        <!-- Content Column -->
-        <div class="col-lg-6 mb-4">
-
-            <!-- Project Card Example -->
+        <!-- Prossimi Viaggi -->
+        <div class="col-lg-7 mb-4">
             <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                <div class="card-header py-3 d-flex align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Prossimi Viaggi</h6>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Vedi tutti</a>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-borderless mb-0">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th>Destinazione</th>
+                                    <th>Data</th>
+                                    <th>Progresso</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                        <strong>Barcellona</strong>
+                                    </td>
+                                    <td><span class="text-gray-600">15 Apr 2026</span></td>
+                                    <td style="min-width: 120px;">
+                                        <div class="d-flex align-items-center">
+                                            <div class="progress flex-grow-1 mr-2" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" style="width: 29%"></div>
+                                            </div>
+                                            <span class="text-xs text-gray-600">29%</span>
+                                        </div>
+                                    </td>
+                                    <td><a href="#" class="btn btn-sm btn-primary">Apri</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-map-marker-alt text-success mr-2"></i>
+                                        <strong>Londra</strong>
+                                    </td>
+                                    <td><span class="text-gray-600">3 Mag 2026</span></td>
+                                    <td style="min-width: 120px;">
+                                        <div class="d-flex align-items-center">
+                                            <div class="progress flex-grow-1 mr-2" style="height: 8px;">
+                                                <div class="progress-bar bg-success" style="width: 0%"></div>
+                                            </div>
+                                            <span class="text-xs text-gray-600">0%</span>
+                                        </div>
+                                    </td>
+                                    <td><a href="#" class="btn btn-sm btn-outline-primary">Apri</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-map-marker-alt text-info mr-2"></i>
+                                        <strong>Tokyo</strong>
+                                    </td>
+                                    <td><span class="text-gray-600">20 Giu 2026</span></td>
+                                    <td style="min-width: 120px;">
+                                        <div class="d-flex align-items-center">
+                                            <div class="progress flex-grow-1 mr-2" style="height: 8px;">
+                                                <div class="progress-bar bg-info" style="width: 0%"></div>
+                                            </div>
+                                            <span class="text-xs text-gray-600">0%</span>
+                                        </div>
+                                    </td>
+                                    <td><a href="#" class="btn btn-sm btn-outline-primary">Apri</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Template -->
+            <div class="card shadow">
+                <div class="card-header py-3 d-flex align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Template Salvati</h6>
+                    <a href="#" class="btn btn-sm btn-outline-primary">Gestisci</a>
                 </div>
                 <div class="card-body">
-                    <h4 class="small font-weight-bold">Server Migration <span class="float-right">20%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Sales Tracking <span class="float-right">40%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Customer Database <span class="float-right">60%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Payout Details <span class="float-right">80%</span></h4>
-                    <div class="progress mb-4">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                    <h4 class="small font-weight-bold">Account Setup <span class="float-right">Complete!</span></h4>
-                    <div class="progress">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Color System -->
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-primary text-white shadow">
-                        <div class="card-body">
-                            Primary
-                            <div class="text-white-50 small">#4e73df</div>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <div class="card border h-100">
+                                <div class="card-body py-3 px-3">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fas fa-umbrella-beach text-warning mr-2"></i>
+                                        <strong class="small">Mare</strong>
+                                    </div>
+                                    <div class="text-xs text-gray-500">18 item</div>
+                                    <a href="#" class="btn btn-xs btn-outline-secondary mt-2" style="font-size:11px; padding: 2px 8px;">Usa</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-success text-white shadow">
-                        <div class="card-body">
-                            Success
-                            <div class="text-white-50 small">#1cc88a</div>
+                        <div class="col-6 mb-3">
+                            <div class="card border h-100">
+                                <div class="card-body py-3 px-3">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fas fa-briefcase text-primary mr-2"></i>
+                                        <strong class="small">Business</strong>
+                                    </div>
+                                    <div class="text-xs text-gray-500">12 item</div>
+                                    <a href="#" class="btn btn-xs btn-outline-secondary mt-2" style="font-size:11px; padding: 2px 8px;">Usa</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-info text-white shadow">
-                        <div class="card-body">
-                            Info
-                            <div class="text-white-50 small">#36b9cc</div>
+                        <div class="col-6 mb-3">
+                            <div class="card border h-100">
+                                <div class="card-body py-3 px-3">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fas fa-mountain text-success mr-2"></i>
+                                        <strong class="small">Montagna</strong>
+                                    </div>
+                                    <div class="text-xs text-gray-500">22 item</div>
+                                    <a href="#" class="btn btn-xs btn-outline-secondary mt-2" style="font-size:11px; padding: 2px 8px;">Usa</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-warning text-white shadow">
-                        <div class="card-body">
-                            Warning
-                            <div class="text-white-50 small">#f6c23e</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-danger text-white shadow">
-                        <div class="card-body">
-                            Danger
-                            <div class="text-white-50 small">#e74a3b</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card bg-secondary text-white shadow">
-                        <div class="card-body">
-                            Secondary
-                            <div class="text-white-50 small">#858796</div>
+                        <div class="col-6 mb-3">
+                            <div class="card border h-100">
+                                <div class="card-body py-3 px-3">
+                                    <div class="d-flex align-items-center mb-1">
+                                        <i class="fas fa-city text-info mr-2"></i>
+                                        <strong class="small">City Break</strong>
+                                    </div>
+                                    <div class="text-xs text-gray-500">15 item</div>
+                                    <a href="#" class="btn btn-xs btn-outline-secondary mt-2" style="font-size:11px; padding: 2px 8px;">Usa</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <div class="col-lg-6 mb-4">
-
-            <!-- Illustrations -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
+        <!-- Checklist Barcellona -->
+        <div class="col-lg-5 mb-4">
+            <div class="card shadow h-100">
+                <div class="card-header py-3 d-flex align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                        <i class="fas fa-map-marker-alt mr-1"></i> Barcellona — Lista
+                    </h6>
+                    <span class="badge badge-warning">7 / 24</span>
                 </div>
-                <div class="card-body">
-                    <div class="text-center">
-                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;" src="{{ asset('img/svg/undraw_editable_dywm.svg') }}" alt="">
+                <div class="card-body" style="overflow-y: auto; max-height: 480px;">
+
+                    <!-- Categoria Documenti -->
+                    <div class="text-xs font-weight-bold text-uppercase text-gray-500 mb-2">
+                        <i class="fas fa-passport mr-1"></i> Documenti
                     </div>
-                    <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that you can use completely free and without attribution!</p>
-                    <a target="_blank" rel="nofollow" href="https://undraw.co/">Browse Illustrations on unDraw →</a>
+                    <div class="mb-3">
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item1" checked>
+                            <label class="custom-control-label text-decoration-line-through text-gray-500" for="item1">Passaporto</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item2" checked>
+                            <label class="custom-control-label text-decoration-line-through text-gray-500" for="item2">Carta d'identità</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item3">
+                            <label class="custom-control-label" for="item3">Assicurazione viaggio</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item4">
+                            <label class="custom-control-label" for="item4">Prenotazione hotel</label>
+                        </div>
+                    </div>
+
+                    <!-- Categoria Tech -->
+                    <div class="text-xs font-weight-bold text-uppercase text-gray-500 mb-2">
+                        <i class="fas fa-laptop mr-1"></i> Tech
+                    </div>
+                    <div class="mb-3">
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item5" checked>
+                            <label class="custom-control-label text-decoration-line-through text-gray-500" for="item5">Caricatore telefono</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item6" checked>
+                            <label class="custom-control-label text-decoration-line-through text-gray-500" for="item6">Power bank</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item7">
+                            <label class="custom-control-label" for="item7">Adattatore prese</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item8">
+                            <label class="custom-control-label" for="item8">Cuffie</label>
+                        </div>
+                    </div>
+
+                    <!-- Categoria Vestiti -->
+                    <div class="text-xs font-weight-bold text-uppercase text-gray-500 mb-2">
+                        <i class="fas fa-tshirt mr-1"></i> Vestiti
+                    </div>
+                    <div class="mb-3">
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item9" checked>
+                            <label class="custom-control-label text-decoration-line-through text-gray-500" for="item9">T-shirt (3x)</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item10">
+                            <label class="custom-control-label" for="item10">Pantaloni</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item11">
+                            <label class="custom-control-label" for="item11">Scarpe comode</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item12">
+                            <label class="custom-control-label" for="item12">Felpa</label>
+                        </div>
+                    </div>
+
+                    <!-- Categoria Igiene -->
+                    <div class="text-xs font-weight-bold text-uppercase text-gray-500 mb-2">
+                        <i class="fas fa-pump-soap mr-1"></i> Igiene
+                    </div>
+                    <div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item13">
+                            <label class="custom-control-label" for="item13">Spazzolino</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item14">
+                            <label class="custom-control-label" for="item14">Shampoo</label>
+                        </div>
+                        <div class="custom-control custom-checkbox mb-1">
+                            <input type="checkbox" class="custom-control-input" id="item15">
+                            <label class="custom-control-label" for="item15">Crema solare</label>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a href="#" class="btn btn-sm btn-primary btn-block">Apri lista completa</a>
                 </div>
             </div>
-
-            <!-- Approach -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
-                </div>
-                <div class="card-body">
-                    <p>SB Admin 2 makes extensive use of Bootstrap 4 utility classes in order to reduce CSS bloat and poor page performance. Custom CSS classes are used to create custom components and custom utility classes.</p>
-                    <p class="mb-0">Before working with this theme, you should become familiar with the Bootstrap framework, especially the utility classes.</p>
-                </div>
-            </div>
-
         </div>
+
     </div>
+
 @endsection
