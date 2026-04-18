@@ -43,6 +43,16 @@ class User extends Authenticatable
      *
      * @return string
      */
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
+    }
+
+    public function templates()
+    {
+        return $this->hasMany(Template::class);
+    }
+
     public function getFullNameAttribute()
     {
         if (is_null($this->last_name)) {

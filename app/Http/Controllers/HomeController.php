@@ -2,35 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        $users = User::count();
+        $user = Auth::user();
 
-        $widget = [
-            'users' => $users,
-            //...
-        ];
+        $trips     = $user->trips()->orderBy('departure_date')->get();
+        $templates = $user->templates()->orderBy('name')->get();
 
-        return view('home', compact('widget'));
+        $nextTrip = $user->trips()
+            ->where('status', '!=', 'done')
+            ->where('departure_date', '>=', now()->toDateString())
+            ->orderBy('departure_date')
+            ->first();
+
+        $totalTrips     = $trips->count();
+        $totalTemplates = $templates->count();
+
+        return view('home', compact('trips', 'templates', 'nextTrip', 'totalTrips', 'totalTemplates'));
     }
 }

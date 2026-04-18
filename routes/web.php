@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\TemplateController;
+use App\Http\Controllers\TripController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile', 'ProfileController@index')->name('profile');
 Route::put('/profile', 'ProfileController@update')->name('profile.update');
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::resource('trips', TripController::class)->only(['index', 'store', 'show', 'update', 'destroy']);
+
+Route::post('trips/{trip}/save-template', [TemplateController::class, 'storeFromTrip'])->name('templates.storeFromTrip');
+Route::delete('templates/{template}', [TemplateController::class, 'destroy'])->name('templates.destroy');

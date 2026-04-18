@@ -21,6 +21,8 @@
 
     <!-- Favicon -->
     <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
+
+    @livewireStyles
 </head>
 <body id="page-top">
 
@@ -44,22 +46,29 @@
         <li class="nav-item {{ Nav::isRoute('home') }}">
             <a class="nav-link" href="{{ route('home') }}">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>{{ __('Dashboard') }}</span></a>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Viaggi -->
+        <li class="nav-item {{ Nav::isRoute('trips.index') }}">
+            <a class="nav-link" href="{{ route('trips.index') }}">
+                <i class="fas fa-fw fa-suitcase"></i>
+                <span>I miei viaggi</span>
+            </a>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
         <!-- Heading -->
-        <div class="sidebar-heading">
-            {{ __('Settings') }}
-        </div>
+        <div class="sidebar-heading">Account</div>
 
         <!-- Nav Item - Profile -->
         <li class="nav-item {{ Nav::isRoute('profile') }}">
             <a class="nav-link" href="{{ route('profile') }}">
                 <i class="fas fa-fw fa-user"></i>
-                <span>{{ __('Profile') }}</span>
+                <span>Profilo</span>
             </a>
         </li>
 
@@ -208,5 +217,7 @@
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+@yield('scripts')
+@livewireScripts
 </body>
 </html>

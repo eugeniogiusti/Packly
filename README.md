@@ -2,7 +2,12 @@
 
 Open source travel packing checklist web app. Never forget anything when you travel.
 
-Built with Laravel 13 + SB Admin 2.
+🚧 **Project Status: Work in Progress**
+
+Packly is an early-stage project currently under active development.  
+The core features are implemented and working, but both backend and frontend require refactoring and improvements.
+
+This project started as a rapid prototype (partially generated with AI) and is being progressively refined to align with clean code principles and Laravel best practices.
 
 ## Features
 
@@ -10,13 +15,27 @@ Built with Laravel 13 + SB Admin 2.
 - Packing checklist per trip, organized by category (Documents, Tech, Clothes, Hygiene)
 - Track progress per trip
 - Save and reuse packing templates (Beach, Business, Mountain, City Break...)
-- Simple auth (register / login)
+- Simple authentication (register / login)
 
-## Requirements
+## Tech Stack
 
-- PHP >= 8.3
-- Composer
-- Node.js >= 18
+- Laravel 13
+- PHP 8.3+
+- Node.js 18+
+- SB Admin 2 (UI)
+
+## Project Goals
+
+- Refactor backend to follow clean architecture and Laravel best practices
+- Improve frontend structure and UX
+- Enhance code quality, maintainability, and scalability
+- Add automated tests
+
+## Contributing
+
+Contributions, suggestions, and feedback are welcome.
+
+Please note: the codebase is currently being refactored, so structure and conventions may change.
 
 ## Installation
 
@@ -36,8 +55,3 @@ php artisan migrate
 
 npm run build
 php artisan serve
-```
-
-## License
-
-MIT — [Eugenio Giusti](https://github.com/eugeniogiusti)
