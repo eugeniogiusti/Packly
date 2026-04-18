@@ -11,6 +11,7 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
@@ -75,6 +76,17 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <footer class="py-4 text-center border-top mt-4">
+            <div class="container">
+                <p class="mb-0 text-muted">
+                    Packly © 2026 Eugenio Giusti | 
+                    <a href="https://github.com/eugeniogiusti/Packly" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                        <i class="fab fa-github"></i> GitHub Repository
+                    </a>
+                </p>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

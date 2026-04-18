@@ -140,7 +140,11 @@
         <footer class="sticky-footer bg-white">
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                    <span>Packly &copy; {{ now()->year }} Eugenio Giusti</span>
+                    <span>Packly &copy; {{ now()->year }} Eugenio Giusti | 
+                        <a href="https://github.com/eugeniogiusti/Packly" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </span>
                 </div>
             </div>
         </footer>
