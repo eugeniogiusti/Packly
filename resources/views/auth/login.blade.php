@@ -7,12 +7,13 @@
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
                     <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <!-- Colonna sinistra: Logo centrato su sfondo blu (sostituisce il cane/immagine di default) -->
+                        <div class="col-lg-6 d-none d-lg-block" style="background: url('{{ asset('img/logo.png') }}'); background-position: center; background-size: 80%; background-repeat: no-repeat; background-color: #4e73df;"></div>
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <img src="{{ asset('img/logo.png') }}" alt="Packly Logo" class="mb-4" style="max-height: 90px;">
-                                    <h1 class="h4 text-gray-900 mb-4">{{ __('Login') }}</h1>
+                                    <img src="{{ asset('img/logo.png') }}" alt="Packly Logo" class="img-fluid mb-4" style="max-height: 100px;">
+                                    <h1 class="h4 text-gray-900 mb-4 font-weight-bold">{{ __('Packly Login') }}</h1>
                                 </div>
 
                                 @if ($errors->any())
