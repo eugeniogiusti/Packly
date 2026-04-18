@@ -11,6 +11,17 @@ The core features are implemented and working, but both backend and frontend req
 
 This project started as a rapid prototype (partially generated with AI) and is being progressively refined to align with clean code principles and Laravel best practices.
 
+## Screenshots
+
+### Dashboard
+![Dashboard](.github/screenshoots/dashboard.png)
+
+### My Travels
+![My Travels](.github/screenshoots/mytravels.png)
+
+### Trip Details
+![Travel](.github/screenshoots/travel.png)
+
 ## Features
 
 - Create trips with destination and date
