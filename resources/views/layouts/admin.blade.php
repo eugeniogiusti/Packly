@@ -20,7 +20,7 @@
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
 
     <!-- Favicon -->
-    <link href="{{ asset('img/favicon.png') }}" rel="icon" type="image/png">
+    <link href="{{ asset('img/logo.png') }}" rel="icon" type="image/png">
 
     @livewireStyles
 </head>
@@ -33,9 +33,7 @@
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
-            <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div>
+            <div class="sidebar-brand-icon"><img src="{{ asset('img/logo.png') }}" alt="Packly Logo" style="max-height: 40px;"></div>
             <div class="sidebar-brand-text mx-3">Packly</div>
         </a>
 
