@@ -1,3 +1,5 @@
+![Logo](public/img/logo.png)
+
 # Packly — Contesto di Sviluppo
 
 App web open source per la gestione delle liste di packing per i viaggi.

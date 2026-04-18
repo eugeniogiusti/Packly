@@ -1,3 +1,5 @@
+![Logo](public/img/logo.png)
+
 # Packly
 
 Open source travel packing checklist web app. Never forget anything when you travel.

@@ -11,6 +11,7 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
+                                    <img src="{{ asset('img/logo.png') }}" alt="Packly Logo" class="mb-4" style="max-height: 90px;">
                                     <h1 class="h4 text-gray-900 mb-4">{{ __('Login') }}</h1>
                                 </div>
 
@@ -45,26 +46,6 @@
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             {{ __('Login') }}
-                                        </button>
-                                    </div>
-
-                                    <hr>
-
-                                    <div class="form-group">
-                                        <button type="button" class="btn btn-github btn-user btn-block">
-                                            <i class="fab fa-github fa-fw"></i> {{ __('Login with GitHub') }}
-                                        </button>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="button" class="btn btn-twitter btn-user btn-block">
-                                            <i class="fab fa-twitter fa-fw"></i> {{ __('Login with Twitter') }}
-                                        </button>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <button type="button" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> {{ __('Login with Facebook') }}
                                         </button>
                                     </div>
                                 </form>
