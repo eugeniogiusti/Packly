@@ -37,8 +37,6 @@ This project started as a rapid prototype (partially generated with AI) and is b
 
 Contributions, suggestions, and feedback are welcome.
 
-Please note: the codebase is currently being refactored, so structure and conventions may change.
-
 ## Installation
 
 ```bash
